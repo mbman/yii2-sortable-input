@@ -31,7 +31,7 @@
         listen: function () {
             var self = this;
             self.$sortable.on('sortupdate', function (e) {
-                var $parent = $(e.detail.origin.container);
+                var $parent = $(e.detail ? e.detail.origin.container : e.originalEvent.detail.origin.container);
                 if (!$parent.length) {
                     return;
                 }
